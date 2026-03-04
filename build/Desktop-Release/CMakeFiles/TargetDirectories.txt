@@ -1,0 +1,9 @@
+/mnt/data/QT/LearnFlow/build/Desktop-Release/CMakeFiles/LearnFlow.dir
+/mnt/data/QT/LearnFlow/build/Desktop-Release/CMakeFiles/edit_cache.dir
+/mnt/data/QT/LearnFlow/build/Desktop-Release/CMakeFiles/rebuild_cache.dir
+/mnt/data/QT/LearnFlow/build/Desktop-Release/CMakeFiles/list_install_components.dir
+/mnt/data/QT/LearnFlow/build/Desktop-Release/CMakeFiles/install.dir
+/mnt/data/QT/LearnFlow/build/Desktop-Release/CMakeFiles/install/local.dir
+/mnt/data/QT/LearnFlow/build/Desktop-Release/CMakeFiles/install/strip.dir
+/mnt/data/QT/LearnFlow/build/Desktop-Release/CMakeFiles/LearnFlow_autogen_timestamp_deps.dir
+/mnt/data/QT/LearnFlow/build/Desktop-Release/CMakeFiles/LearnFlow_autogen.dir

@@ -1,0 +1,9 @@
+/mnt/data/QT/LearnFlow/build/CMakeFiles/LearnFlow.dir
+/mnt/data/QT/LearnFlow/build/CMakeFiles/edit_cache.dir
+/mnt/data/QT/LearnFlow/build/CMakeFiles/rebuild_cache.dir
+/mnt/data/QT/LearnFlow/build/CMakeFiles/list_install_components.dir
+/mnt/data/QT/LearnFlow/build/CMakeFiles/install.dir
+/mnt/data/QT/LearnFlow/build/CMakeFiles/install/local.dir
+/mnt/data/QT/LearnFlow/build/CMakeFiles/install/strip.dir
+/mnt/data/QT/LearnFlow/build/CMakeFiles/LearnFlow_autogen_timestamp_deps.dir
+/mnt/data/QT/LearnFlow/build/CMakeFiles/LearnFlow_autogen.dir

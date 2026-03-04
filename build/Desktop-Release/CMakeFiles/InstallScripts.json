@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/mnt/data/QT/LearnFlow/build/Desktop-Release/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

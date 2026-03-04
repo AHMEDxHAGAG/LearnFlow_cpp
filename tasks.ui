@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LearnFlowDesktop</class>
+ <widget class="QWidget" name="LearnFlowDesktop">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>LearnFlow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+    QWidget#LearnFlowDesktop {
+      background-color: #EAF7F6;
+    }
+
+    /* Sidebar */
+    QFrame#sidebar {
+      background-color: #EAF7F6;
+      border-right: 1px solid rgba(0, 0, 0, 0.08);
+      min-width: 72px;
+      max-width: 72px;
+    }
+
+    /* Logo button */
+    QPushButton#logoBtn {
+      background: transparent;
+      border: none;
+      padding: 8px;
+      qproperty-icon: none;
+      color: #06B6A4;
+      font-size: 18px;
+      font-family: &quot;Segoe UI&quot;, sans-serif;
+    }
+
+    /* Nav buttons base */
+    QPushButton#navHome, QPushButton#navCalendar {
+      background: transparent;
+      border: 1px solid #06B6A4;
+      border-radius: 25px;
+      color: #065F56;
+      font-family: &quot;Inter&quot;, &quot;Segoe UI&quot;, sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 12px 8px;
+      min-height: 120px;
+      max-width: 53px;
+    }
+    QPushButton#navHome:hover, QPushButton#navCalendar:hover {
+      background-color: rgba(6, 182, 164, 0.1);
+    }
+
+    /* Active nav button */
+    QPushButton#navTasks {
+      background-color: #06B6A4;
+      border: none;
+      border-radius: 25px;
+      color: #EAF7F6;
+      font-family: &quot;Inter&quot;, &quot;Segoe UI&quot;, sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 12px 8px;
+      min-height: 120px;
+      max-width: 53px;
+    }
+    QPushButton#navTasks:hover {
+      background-color: #059E8E;
+    }
+
+    /* Settings button */
+    QPushButton#settingsBtn {
+      background: transparent;
+      border: none;
+      padding: 8px;
+      color: #065F56;
+      font-size: 20px;
+    }
+    QPushButton#settingsBtn:hover {
+      color: #06B6A4;
+    }
+
+    /* Search bar */
+    QLineEdit#searchBar {
+      background-color: rgba(255, 255, 255, 0.25);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-radius: 25px;
+      padding: 14px 20px 14px 44px;
+      font-family: &quot;Roboto&quot;, &quot;Segoe UI&quot;, sans-serif;
+      font-size: 18px;
+      color: #065D54;
+    }
+    QLineEdit#searchBar:focus {
+      border: 1px solid #06B6A4;
+    }
+
+    /* Filter buttons */
+    QPushButton#filterAll {
+      background-color: #06B6A4;
+      border: none;
+      border-radius: 20px;
+      color: white;
+      font-family: &quot;Roboto&quot;, &quot;Segoe UI&quot;, sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      padding: 10px 22px;
+      min-height: 40px;
+    }
+    QPushButton#filterAll:hover {
+      background-color: #059E8E;
+    }
+    QPushButton#filterAll:checked {
+      background-color: #06B6A4;
+    }
+
+    QPushButton#filterOverdue, QPushButton#filterHighPriority {
+      background: transparent;
+      border: 1px solid #065F56;
+      border-radius: 20px;
+      color: #065F56;
+      font-family: &quot;Roboto&quot;, &quot;Segoe UI&quot;, sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      padding: 10px 22px;
+      min-height: 40px;
+    }
+    QPushButton#filterOverdue:hover, QPushButton#filterHighPriority:hover {
+      background-color: rgba(6, 95, 86, 0.08);
+    }
+    QPushButton#filterOverdue:checked, QPushButton#filterHighPriority:checked {
+      background-color: #06B6A4;
+      border: none;
+      color: white;
+    }
+
+    /* Content area */
+    QFrame#contentArea {
+      background: transparent;
+      border: none;
+    }
+   </string>
+  </property>
+  <layout class="QHBoxLayout" name="mainLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QFrame" name="contentArea">
+     <property name="frameShape">
+      <enum>QFrame::Shape::NoFrame</enum>
+     </property>
+     <property name="styleSheet">
+      <string>
+       QFrame#contentArea {
+         background-color: #EAF7F6;
+         border: none;
+       }
+       QLineEdit#searchBar {
+         background-color: transparent;
+         border: 1px solid rgba(0, 0, 0, 0.08);
+         border-radius: 26px;
+         padding: 14px 20px 14px 50px;
+         font-family: "Inter", sans-serif;
+         font-size: 16px;
+         color: #111111;
+         background-image: url(:/search.png);
+         background-repeat: no-repeat;
+         background-position: left 20px center;
+       }
+       QLineEdit#searchBar:focus {
+         border: 1px solid #06B6A4;
+         background-color: white;
+       }
+       QPushButton#filterAll {
+         background-color: #06B6A4;
+         border: none;
+         border-radius: 20px;
+         color: white;
+         font-family: "Inter", sans-serif;
+         font-size: 16px;
+         font-weight: 600;
+         padding: 10px 24px;
+       }
+       QPushButton#filterOverdue, QPushButton#filterHighPriority {
+         background-color: transparent;
+         border: 1px solid #065F56;
+         border-radius: 20px;
+         color: #065F56;
+         font-family: "Inter", sans-serif;
+         font-size: 16px;
+         font-weight: 600;
+         padding: 10px 24px;
+       }
+       QPushButton#filterOverdue:hover, QPushButton#filterHighPriority:hover {
+         background-color: rgba(6, 182, 164, 0.1);
+       }
+      </string>
+     </property>
+     <layout class="QVBoxLayout" name="contentLayout">
+      <property name="spacing">
+       <number>30</number>
+      </property>
+      <property name="leftMargin">
+       <number>60</number>
+      </property>
+      <property name="topMargin">
+       <number>60</number>
+      </property>
+      <property name="rightMargin">
+       <number>60</number>
+      </property>
+      <property name="bottomMargin">
+       <number>60</number>
+      </property>
+      <item>
+       <layout class="QHBoxLayout" name="searchLayout">
+        <item>
+         <widget class="QLineEdit" name="searchBar">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>52</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>900</width>
+            <height>52</height>
+           </size>
+          </property>
+          <property name="placeholderText">
+           <string>Search anything....</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="searchSpacerRight">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="filterLayout">
+        <property name="spacing">
+         <number>16</number>
+        </property>
+        <item>
+         <widget class="QPushButton" name="filterAll">
+          <property name="text">
+           <string>All</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="filterOverdue">
+          <property name="text">
+           <string>Overdue</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="filterHighPriority">
+          <property name="text">
+           <string>High Priority</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="filterSpacer">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

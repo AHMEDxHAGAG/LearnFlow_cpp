@@ -1,0 +1,21 @@
+<RCC>
+    <qresource prefix="/">
+        <file>home.png</file>
+        <file>nottasks.png</file>
+        <file>notcalendar.png</file>
+        <file>profileImage.png</file>
+        <file>sidebarTopCheck.png</file>
+        <file>BackgroundPattern.png</file>
+        <file>search.png</file>
+        <file>left_arrow.png</file>
+        <file>right_arrow.png</file>
+        <file>Inter-VariableFont_opsz,wght.ttf</file>
+        <file>Manrope-VariableFont_wght.ttf</file>
+        <file>Pecita.otf</file>
+        <file>Patrick_Hand/PatrickHand-Regular.ttf</file>
+        <file>Roboto_Flex/RobotoFlex-VariableFont_GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght.ttf</file>
+        <file>calendar.png</file>
+        <file>tasks.png</file>
+        <file>nothome.png</file>
+    </qresource>
+</RCC>
