@@ -30,6 +30,10 @@ private slots:
 
     void on_filterHighPriority_clicked();
 
+    void on_calBtnNext_clicked();
+
+    void on_calBtnPrev_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

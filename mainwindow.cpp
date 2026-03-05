@@ -13,7 +13,7 @@ void setTasksPage(Ui::MainWindow *ui);
 void setCalendarPage(Ui::MainWindow *ui);
 void applyShadow (QWidget *widget, qreal blurRadius, qreal dx, qreal dy, const QColor &color);
 void applyingShadows(Ui::MainWindow *ui);
-void setCurrentTime(Ui::MainWindow *ui);
+QDateTime getCurrentTime(Ui::MainWindow *ui);
 void intializeCardsData(Ui::MainWindow *ui);
 void intializeCardsView(Ui::MainWindow *ui, QString tasksNum, QString completedNum, QString progressNum, QString productivityNum);
 void intializeCards(Ui::MainWindow *ui);
@@ -21,10 +21,13 @@ void update(Ui::MainWindow *ui);
 void filterAllMode(Ui::MainWindow *ui);
 void filterOverdueMode(Ui::MainWindow *ui);
 void filterHighPriority(Ui::MainWindow *ui);
+void displayDateCardForward(Ui::MainWindow *ui);
+void displayDateCardBackward(Ui::MainWindow *ui);
 void firstRun(Ui::MainWindow *ui);
 
 vector<pair<ll,ll>> tasks;
 QString tasksNum, completedNum, progressNum, productivityNum;
+QDateTime playableTime, currentPlayableTime;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -92,6 +95,8 @@ void setCalendarPage(Ui::MainWindow *ui){
         "QPushButton#navTasks { border: none; background: transparent; border-image: url(:/nottasks.png) 0 0 0 0 stretch stretch; min-height: 144px; max-width: 53px;}"
         );
     ui->contentStack->setCurrentIndex(2);
+    currentPlayableTime = getCurrentTime(ui);
+    displayDateCardForward(ui);
 }
 
 void applyShadow (QWidget *widget, qreal blurRadius, qreal dx, qreal dy, const QColor &color) {
@@ -111,10 +116,11 @@ void applyingShadows(Ui::MainWindow *ui){
     applyShadow(ui->tasksSearchBar,   4, 0, 0, QColor(0, 0, 0, 22));
 }
 
-void setCurrentTime(Ui::MainWindow *ui){
+QDateTime getCurrentTime(Ui::MainWindow *ui){
     QDateTime time = QDateTime::currentDateTime();
     ui->calendarDate->setText(time.toString("dd MMM"));
     ui->calendarDate->adjustSize();
+    return time;
 }
 
 void intializeCardsData(){
@@ -324,7 +330,7 @@ void filterHighPriority(Ui::MainWindow *ui){
 void firstRun(Ui::MainWindow *ui){
     setHomePage(ui);
     applyingShadows(ui);
-    setCurrentTime(ui);
+
     update(ui);
 }
 
@@ -341,5 +347,80 @@ void MainWindow::on_filterOverdue_clicked()
 void MainWindow::on_filterHighPriority_clicked()
 {
     filterHighPriority(ui);
+}
+
+void displayDateCardForward(Ui::MainWindow *ui){
+    playableTime = currentPlayableTime;
+    ui->dayLabelY->setText(playableTime.toString("MMM ddd"));
+    ui->dayNumY->setText(playableTime.toString("dd"));
+
+    playableTime = playableTime.addDays(1);
+    ui->dayLabel0->setText(playableTime.toString("MMM ddd"));
+    ui->dayNum0->setText(playableTime.toString("dd"));
+
+    playableTime = playableTime.addDays(1);
+    ui->dayLabel1->setText(playableTime.toString("MMM ddd"));
+    ui->dayNum1->setText(playableTime.toString("dd"));
+
+    playableTime = playableTime.addDays(1);
+    ui->dayLabel2->setText(playableTime.toString("MMM ddd"));
+    ui->dayNum2->setText(playableTime.toString("dd"));
+
+    playableTime = playableTime.addDays(1);
+    ui->dayLabel3->setText(playableTime.toString("MMM ddd"));
+    ui->dayNum3->setText(playableTime.toString("dd"));
+
+    playableTime = playableTime.addDays(1);
+    ui->dayLabel4->setText(playableTime.toString("MMM ddd"));
+    ui->dayNum4->setText(playableTime.toString("dd"));
+
+    playableTime = playableTime.addDays(1);
+    ui->dayLabel5->setText(playableTime.toString("MMM ddd"));
+    ui->dayNum5->setText(playableTime.toString("dd"));
+
+    currentPlayableTime = currentPlayableTime.addDays(1);
+}
+
+void displayDateCardBackward(Ui::MainWindow *ui){
+    playableTime = currentPlayableTime.addDays(4);
+    ui->dayLabel5->setText(playableTime.toString("MMM ddd"));
+    ui->dayNum5->setText(playableTime.toString("dd"));
+
+    playableTime = playableTime.addDays(-1);
+    ui->dayLabel4->setText(playableTime.toString("MMM ddd"));
+    ui->dayNum4->setText(playableTime.toString("dd"));
+
+    playableTime = playableTime.addDays(-1);
+    ui->dayLabel3->setText(playableTime.toString("MMM ddd"));
+    ui->dayNum3->setText(playableTime.toString("dd"));
+
+    playableTime = playableTime.addDays(-1);
+    ui->dayLabel2->setText(playableTime.toString("MMM ddd"));
+    ui->dayNum2->setText(playableTime.toString("dd"));
+
+    playableTime = playableTime.addDays(-1);
+    ui->dayLabel1->setText(playableTime.toString("MMM ddd"));
+    ui->dayNum1->setText(playableTime.toString("dd"));
+
+    playableTime = playableTime.addDays(-1);
+    ui->dayLabel0->setText(playableTime.toString("MMM ddd"));
+    ui->dayNum0->setText(playableTime.toString("dd"));
+    currentPlayableTime = playableTime;
+
+    playableTime = playableTime.addDays(-1);
+    ui->dayLabelY->setText(playableTime.toString("MMM ddd"));
+    ui->dayNumY->setText(playableTime.toString("dd"));
+
+}
+
+void MainWindow::on_calBtnNext_clicked()
+{
+    displayDateCardForward(ui);
+}
+
+
+void MainWindow::on_calBtnPrev_clicked()
+{
+    displayDateCardBackward(ui);
 }
 
