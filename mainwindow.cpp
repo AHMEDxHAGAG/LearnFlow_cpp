@@ -5,6 +5,7 @@
 #include <QDebug>
 #include <QString>
 typedef long long ll;
+typedef long double ld;
 using namespace std;
 
 void setHomePage(Ui::MainWindow *ui);
@@ -112,10 +113,10 @@ void setCurrentTime(Ui::MainWindow *ui){
 }
 
 void intializeCardsData(){
-    ll compN = 0;
+    ll compN = 0; // i need to Implement this the rest is already done, dont forget when u finish the list logic
     ll tasksN = tasks.size();
-    ll progN;
-    ll prodN;
+    ll progN = tasksN-compN;
+    ll prodN = 0; if(tasksN!=0) prodN = ((compN/(ld)tasksN)*100);
     completedNum = QString::fromStdString(to_string(compN));
     tasksNum = QString::fromStdString(to_string(tasksN));
     progressNum = QString::fromStdString(to_string(progN));
@@ -134,10 +135,14 @@ void intializeCards(Ui::MainWindow *ui){
     intializeCardsView(ui);
 }
 
+void update(Ui::MainWindow *ui){
+    intializeCards(ui);
+}
+
 void firstRun(Ui::MainWindow *ui){
     setHomePage(ui);
     applyingShadows(ui);
     setCurrentTime(ui);
-    intializeCards(ui);
+    update(ui);
 }
 
