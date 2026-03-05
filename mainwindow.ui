@@ -529,7 +529,7 @@ QPushButton#calBtnPrev:hover, QPushButton#calBtnNext:hover {
     </rect>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="homePage">
     <widget class="QLabel" name="homeBackground">
