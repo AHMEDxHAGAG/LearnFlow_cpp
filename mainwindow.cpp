@@ -13,8 +13,13 @@ void setCalendarPage(Ui::MainWindow *ui);
 void applyShadow (QWidget *widget, qreal blurRadius, qreal dx, qreal dy, const QColor &color);
 void applyingShadows(Ui::MainWindow *ui);
 void setCurrentTime(Ui::MainWindow *ui);
+void intializeCardsData(Ui::MainWindow *ui);
+void intializeCardsView(Ui::MainWindow *ui, QString tasksNum, QString completedNum, QString progressNum, QString productivityNum);
+void intializeCards(Ui::MainWindow *ui);
 void firstRun(Ui::MainWindow *ui);
+
 vector<pair<ll,ll>> tasks;
+QString tasksNum, completedNum, progressNum, productivityNum;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -34,12 +39,10 @@ void MainWindow::on_navHome_clicked()
     setHomePage(ui);
 }
 
-
 void MainWindow::on_navTasks_clicked()
 {
     setTasksPage(ui);
 }
-
 
 void MainWindow::on_navCalendar_clicked()
 {
@@ -58,7 +61,6 @@ void setHomePage(Ui::MainWindow *ui){
         );
     ui->contentStack->setCurrentIndex(0);
 }
-
 
 void setTasksPage(Ui::MainWindow *ui){
     ui->navHome->setStyleSheet(
@@ -109,8 +111,27 @@ void setCurrentTime(Ui::MainWindow *ui){
     ui->calendarDate->adjustSize();
 }
 
-void intializeCards(Ui::MainWindow *ui){
+void intializeCardsData(){
+    ll compN = 0;
+    ll tasksN = tasks.size();
+    ll progN;
+    ll prodN;
+    completedNum = QString::fromStdString(to_string(compN));
+    tasksNum = QString::fromStdString(to_string(tasksN));
+    progressNum = QString::fromStdString(to_string(progN));
+    productivityNum = QString::fromStdString(to_string(prodN));
+}
 
+void intializeCardsView(Ui::MainWindow *ui){
+    ui->valueCompleted->setText(completedNum);
+    ui->valueInProgress->setText(progressNum);
+    ui->valueProductivity->setText(productivityNum);
+    ui->valueTotalTasks->setText(tasksNum);
+}
+
+void intializeCards(Ui::MainWindow *ui){
+    intializeCardsData();
+    intializeCardsView(ui);
 }
 
 void firstRun(Ui::MainWindow *ui){
