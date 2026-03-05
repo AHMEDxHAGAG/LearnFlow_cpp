@@ -24,6 +24,12 @@ private slots:
 
     void on_navCalendar_clicked();
 
+    void on_filterAll_clicked();
+
+    void on_filterOverdue_clicked();
+
+    void on_filterHighPriority_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
