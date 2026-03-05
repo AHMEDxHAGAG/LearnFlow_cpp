@@ -690,6 +690,7 @@ public:
         filterOverdue->setObjectName("filterOverdue");
         filterOverdue->setGeometry(QRect(213, 144, 148, 58));
         filterOverdue->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
+        filterOverdue->setStyleSheet(QString::fromUtf8(""));
         filterOverdue->setCheckable(true);
         filterHighPriority = new QPushButton(tasksPage);
         filterHighPriority->setObjectName("filterHighPriority");
@@ -752,6 +753,9 @@ public:
 "                border-radius: 8px;\n"
 "				 padding: 8px;\n"
 "              }\n"
+"			 QFrame#dayCardY:hover {\n"
+"            	background-color: rgba(6, 182, 164, 0.1);\n"
+"              }\n"
 "             "));
         dayCardYL = new QVBoxLayout(dayCardY);
         dayCardYL->setSpacing(8);
@@ -802,7 +806,13 @@ public:
 "    border: none;\n"
 "    border-radius: 8px;\n"
 "    padding: 8px;\n"
-"}"));
+"}\n"
+"\n"
+"QFrame#dayCard0:hover{\n"
+"    background-color: #059E8E;\n"
+"}\n"
+"\n"
+""));
         dayCard0L = new QVBoxLayout(dayCard0);
         dayCard0L->setSpacing(8);
         dayCard0L->setContentsMargins(6, 6, 6, 6);
@@ -860,6 +870,9 @@ public:
 "                border-radius: 8px;\n"
 "				 padding: 8px;\n"
 "              }\n"
+"			 QFrame#dayCard1:hover {\n"
+"            	background-color: rgba(6, 182, 164, 0.1);\n"
+"              }\n"
 "             "));
         dayCard1L = new QVBoxLayout(dayCard1);
         dayCard1L->setSpacing(8);
@@ -910,6 +923,9 @@ public:
 "                border: 1px solid rgba(0, 0, 0, 0.1);\n"
 "                border-radius: 8px;\n"
 "				 padding: 8px;\n"
+"              }\n"
+" 			 QFrame#dayCard2:hover {\n"
+"            	background-color: rgba(6, 182, 164, 0.1);\n"
 "              }\n"
 "             "));
         dayCard2L = new QVBoxLayout(dayCard2);
@@ -962,7 +978,9 @@ public:
 "                border-radius: 8px;\n"
 "				 padding: 8px;\n"
 "              }\n"
-"             "));
+"              QFrame#dayCard3:hover {\n"
+"            	background-color: rgba(6, 182, 164, 0.1);\n"
+"              }"));
         dayCard3L = new QVBoxLayout(dayCard3);
         dayCard3L->setSpacing(8);
         dayCard3L->setContentsMargins(6, 6, 6, 6);
@@ -1013,7 +1031,9 @@ public:
 "                border-radius: 8px;\n"
 "				 padding: 8px;\n"
 "              }\n"
-"             "));
+"              QFrame#dayCard4:hover {\n"
+"            	background-color: rgba(6, 182, 164, 0.1);\n"
+"              }"));
         dayCard4L = new QVBoxLayout(dayCard4);
         dayCard4L->setSpacing(8);
         dayCard4L->setContentsMargins(6, 6, 6, 6);
@@ -1062,6 +1082,9 @@ public:
 "                background: transparent;\n"
 "                border: 1px solid rgba(0, 0, 0, 0.1);\n"
 "                border-radius: 8px;\n"
+"              }\n"
+"			 QFrame#dayCard5:hover {\n"
+"            	background-color: rgba(6, 182, 164, 0.1);\n"
 "              }\n"
 "             "));
         dayCard5L = new QVBoxLayout(dayCard5);
@@ -1165,19 +1188,19 @@ public:
         calendarPageTitle->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-family:'Inter'; font-weight:700; color:#06b6a4;\">Calendar</span></p></body></html>", nullptr));
         calendarDate->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-family:'Inter'; font-size:60px; font-weight:500; color:#7b8185;\">20 Feb</span></p></body></html>", nullptr));
         calBtnPrev->setText(QString());
-        dayLabelY->setText(QCoreApplication::translate("MainWindow", "THU", nullptr));
+        dayLabelY->setText(QCoreApplication::translate("MainWindow", "Feb THU", nullptr));
         dayNumY->setText(QCoreApplication::translate("MainWindow", "19", nullptr));
-        dayLabel0->setText(QCoreApplication::translate("MainWindow", "FRI", nullptr));
+        dayLabel0->setText(QCoreApplication::translate("MainWindow", "Feb FRI", nullptr));
         dayNum0->setText(QCoreApplication::translate("MainWindow", "20", nullptr));
-        dayLabel1->setText(QCoreApplication::translate("MainWindow", "SAT", nullptr));
+        dayLabel1->setText(QCoreApplication::translate("MainWindow", "Feb SAT", nullptr));
         dayNum1->setText(QCoreApplication::translate("MainWindow", "21", nullptr));
-        dayLabel2->setText(QCoreApplication::translate("MainWindow", "SUN", nullptr));
+        dayLabel2->setText(QCoreApplication::translate("MainWindow", "Feb SUN", nullptr));
         dayNum2->setText(QCoreApplication::translate("MainWindow", "22", nullptr));
-        dayLabel3->setText(QCoreApplication::translate("MainWindow", "MON", nullptr));
+        dayLabel3->setText(QCoreApplication::translate("MainWindow", "Feb MON", nullptr));
         dayNum3->setText(QCoreApplication::translate("MainWindow", "23", nullptr));
-        dayLabel4->setText(QCoreApplication::translate("MainWindow", "TUE", nullptr));
+        dayLabel4->setText(QCoreApplication::translate("MainWindow", "Feb TUE", nullptr));
         dayNum4->setText(QCoreApplication::translate("MainWindow", "24", nullptr));
-        dayLabel5->setText(QCoreApplication::translate("MainWindow", "WED", nullptr));
+        dayLabel5->setText(QCoreApplication::translate("MainWindow", "Feb WED", nullptr));
         dayNum5->setText(QCoreApplication::translate("MainWindow", "25", nullptr));
         calBtnNext->setText(QString());
     } // retranslateUi
