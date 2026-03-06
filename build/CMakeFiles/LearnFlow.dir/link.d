@@ -5,6 +5,7 @@ LearnFlow: \
   CMakeFiles/LearnFlow.dir/LearnFlow_autogen/mocs_compilation.cpp.o \
   CMakeFiles/LearnFlow.dir/main.cpp.o \
   CMakeFiles/LearnFlow.dir/mainwindow.cpp.o \
+  CMakeFiles/LearnFlow.dir/addtaskdialog.cpp.o \
   CMakeFiles/LearnFlow.dir/LearnFlow_autogen/EWIEGA46WW/qrc_resources.cpp.o \
   /usr/lib/libQt6Widgets.so.6.10.2 \
   /usr/lib/libQt6Gui.so.6.10.2 \
@@ -81,6 +82,8 @@ CMakeFiles/LearnFlow.dir/LearnFlow_autogen/mocs_compilation.cpp.o:
 CMakeFiles/LearnFlow.dir/main.cpp.o:
 
 CMakeFiles/LearnFlow.dir/mainwindow.cpp.o:
+
+CMakeFiles/LearnFlow.dir/addtaskdialog.cpp.o:
 
 CMakeFiles/LearnFlow.dir/LearnFlow_autogen/EWIEGA46WW/qrc_resources.cpp.o:
 

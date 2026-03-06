@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/LearnFlow.dir/LearnFlow_autogen/EWIEGA46WW/qrc_resources.cpp.o.d"
   "CMakeFiles/LearnFlow.dir/LearnFlow_autogen/mocs_compilation.cpp.o"
   "CMakeFiles/LearnFlow.dir/LearnFlow_autogen/mocs_compilation.cpp.o.d"
+  "CMakeFiles/LearnFlow.dir/addtaskdialog.cpp.o"
+  "CMakeFiles/LearnFlow.dir/addtaskdialog.cpp.o.d"
   "CMakeFiles/LearnFlow.dir/main.cpp.o"
   "CMakeFiles/LearnFlow.dir/main.cpp.o.d"
   "CMakeFiles/LearnFlow.dir/mainwindow.cpp.o"

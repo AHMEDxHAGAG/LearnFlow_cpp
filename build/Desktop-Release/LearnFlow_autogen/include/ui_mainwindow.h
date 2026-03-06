@@ -10,15 +10,12 @@
 #define UI_MAINWINDOW_H
 
 #include <QtCore/QVariant>
-#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QFrame>
-#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStackedWidget>
-#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -39,9 +36,6 @@ public:
     QLabel *profileImage;
     QLabel *greetingHello;
     QLabel *greetingName;
-    QLabel *mindLabel;
-    QLineEdit *taskInput;
-    QPushButton *addButton;
     QLabel *tasksHeading;
     QFrame *cardTotalTasks;
     QLabel *labelTotalTasks;
@@ -75,40 +69,14 @@ public:
     QLabel *calendarBackground;
     QLabel *calendarFadeOverlay;
     QLabel *calendarPageTitle;
-    QLabel *calendarDate;
-    QWidget *layoutWidget;
-    QHBoxLayout *dayPickerRow_2;
+    QLabel *calendarTitleLabel;
+    QLabel *calendarSubtitle;
+    QLabel *calendarWeekRange;
     QPushButton *calBtnPrev;
-    QHBoxLayout *dayCardsLayout_2;
-    QFrame *dayCardY;
-    QVBoxLayout *dayCardYL;
-    QLabel *dayLabelY;
-    QLabel *dayNumY;
-    QFrame *dayCard0;
-    QVBoxLayout *dayCard0L;
-    QLabel *dayLabel0;
-    QLabel *dayNum0;
-    QFrame *dayCard1;
-    QVBoxLayout *dayCard1L;
-    QLabel *dayLabel1;
-    QLabel *dayNum1;
-    QFrame *dayCard2;
-    QVBoxLayout *dayCard2L;
-    QLabel *dayLabel2;
-    QLabel *dayNum2;
-    QFrame *dayCard3;
-    QVBoxLayout *dayCard3L;
-    QLabel *dayLabel3;
-    QLabel *dayNum3;
-    QFrame *dayCard4;
-    QVBoxLayout *dayCard4L;
-    QLabel *dayLabel4;
-    QLabel *dayNum4;
-    QFrame *dayCard5;
-    QVBoxLayout *dayCard5L;
-    QLabel *dayLabel5;
-    QLabel *dayNum5;
     QPushButton *calBtnNext;
+    QFrame *calendarContainer;
+    QPushButton *addScheduleBtn;
+    QPushButton *fabButton;
 
     void setupUi(QWidget *MainWindow)
     {
@@ -196,73 +164,26 @@ public:
 "  color: #111111;\n"
 "}\n"
 "\n"
-"QLabel#mindLabel {\n"
-"  font-family: 'Roboto Flex';\n"
-"  font-weight: 900;\n"
-"  font-size: 36px;\n"
-"  color: #111111;\n"
-"}\n"
-"\n"
-"QLineEdit#taskInput {\n"
-"  background: qlineargradient(x1:0, y1:0, x2:0, y2:1,\n"
-"    stop:0 rgba(255,255,255,0.88),\n"
-"    stop:1 rgba(255,255,255,0.58));\n"
-"  border: 2px solid rgba(255,255,255,0.95);\n"
-"  border-top-color: rgba(255,255,25"
-                        "5,1.0);\n"
-"  border-left-color: rgba(255,255,255,0.98);\n"
-"  border-bottom-color: rgba(200,210,208,0.45);\n"
-"  border-right-color: rgba(200,210,208,0.35);\n"
-"  border-radius: 31px;\n"
-"  padding: 0px 24px;\n"
-"  font-family: 'Inter';\n"
-"  font-size: 20px;\n"
-"  color: #374151;\n"
-"  font-weight: 600;\n"
-"  min-height: 62px;\n"
-"  selection-background-color: #06B6A4;\n"
-"  selection-color: white;\n"
-"}\n"
-"\n"
-"QLineEdit#taskInput:hover {\n"
-"  background: qlineargradient(x1:0, y1:0, x2:0, y2:1,\n"
-"    stop:0 rgba(255,255,255,0.94),\n"
-"    stop:1 rgba(255,255,255,0.68));\n"
-"  border: 2px solid rgba(255,255,255,1.0);\n"
-"  border-bottom-color: rgba(200,210,208,0.50);\n"
-"}\n"
-"\n"
-"QLineEdit#taskInput:focus {\n"
-"  background: qlineargradient(x1:0, y1:0, x2:0, y2:1,\n"
-"    stop:0 rgba(255,255,255,0.96),\n"
-"    stop:1 rgba(255,255,255,0.72));\n"
-"  border: 2px solid rgba(6, 182, 164, 0.45);\n"
-"  border-top-color: rgba(6, 182, 164, 0.55);\n"
-"}\n"
-"\n"
-"QPushButton#addButton {\n"
-"  background-color: #0"
-                        "6B6A4;\n"
+"QPushButton#fabButton {\n"
+"  background-color: #06B6A4;\n"
 "  color: white;\n"
 "  border: none;\n"
-"  border-radius: 31px;\n"
-"  font-family: 'Manrope';\n"
-"  font-weight: 800;\n"
-"  font-size: 30px;\n"
-"  min-width: 170px;\n"
-"  min-height: 62px;\n"
-"  padding: 0px 24px;\n"
+"  border-radius: 32px;\n"
+"  font-family: 'Inter';\n"
+"  font-weight: 300;\n"
+"  font-size: 36px;\n"
 "}\n"
 "\n"
-"QPushButton#addButton:hover {\n"
+"QPushButton#fabButton:hover {\n"
 "  background-color: #059E8E;\n"
 "}\n"
 "\n"
-"QPushButton#addButton:pressed {\n"
+"QPushButton#fabButton:pressed {\n"
 "  background-color: #048A7C;\n"
 "}\n"
 "\n"
-"QLabel#questionMark {\n"
+"QLabel#ques"
+                        "tionMark {\n"
 "  font-family: 'Pecita';\n"
 "  font-size: 64px;\n"
 "  color: #06B6A4;\n"
@@ -284,8 +205,7 @@ public:
 "    stop:0.5 rgba(255,255,255,0.78),\n"
 "    stop:1 rgba(245,248,247,0.60));\n"
 "  border: 2px solid rgba(255,255,255,0.96);\n"
-"  border-top-color: rgba(255,255,255,1.0)"
-                        ";\n"
+"  border-top-color: rgba(255,255,255,1.0);\n"
 "  border-left-color: rgba(255,255,255,0.98);\n"
 "  border-bottom-color: rgba(200,210,208,0.40);\n"
 "  border-right-color: rgba(200,210,208,0.30);\n"
@@ -297,7 +217,8 @@ public:
 "QFrame#cardProductivity:hover,\n"
 "QFrame#cardCompleted:hover {\n"
 "  background: qlineargradient(x1:0, y1:0, x2:0, y2:1,\n"
-"    stop:0 rgba(255,255,255,0.98),\n"
+"    stop:0 rgba(255,25"
+                        "5,255,0.98),\n"
 "    stop:0.5 rgba(255,255,255,0.88),\n"
 "    stop:1 rgba(250,252,251,0.72));\n"
 "  border: 2px solid rgba(255,255,255,1.0);\n"
@@ -320,8 +241,7 @@ public:
 "QLabel#valueProductivity,\n"
 "QLabel#valueCompleted {\n"
 "  font-family: 'Inter';\n"
-"  font-weight: "
-                        "900;\n"
+"  font-weight: 900;\n"
 "  font-size: 36px;\n"
 "  color: #111111;\n"
 "  background: transparent;\n"
@@ -340,7 +260,8 @@ public:
 "  background-color: #FFEDD4;\n"
 "  border-radius: 14px;\n"
 "  min-width: 48px;\n"
-"  min-height: 48px;\n"
+""
+                        "  min-height: 48px;\n"
 "  max-width: 48px;\n"
 "  max-height: 48px;\n"
 "}\n"
@@ -370,8 +291,7 @@ public:
 "  background: transparent;\n"
 "}\n"
 "\n"
-"Q"
-                        "Label#iconInProgress {\n"
+"QLabel#iconInProgress {\n"
 "  color: #F54900;\n"
 "  font-weight: 900;\n"
 "  font-size: 24px;\n"
@@ -391,7 +311,8 @@ public:
 "  font-size: 24px;\n"
 "  background: transparent;\n"
 "}\n"
-"\n"
+""
+                        "\n"
 "QStackedWidget#contentStack {\n"
 "  background: transparent;\n"
 "}\n"
@@ -420,8 +341,7 @@ public:
 "QLabel#homeBackground,\n"
 "QLabel#tasksBackground,\n"
 "QLabel#calendarBackground {\n"
-"  background-image: url(:"
-                        "/BackgroundPattern.png);\n"
+"  background-image: url(:/BackgroundPattern.png);\n"
 "  background-repeat: repeat;\n"
 "}\n"
 "\n"
@@ -439,7 +359,8 @@ public:
 "\n"
 "QScrollBar::handle:vertical {\n"
 "  background: rgba(6, 95, 86, 0.3);\n"
-"  border-radius: 4px;\n"
+"  border-ra"
+                        "dius: 4px;\n"
 "  min-height: 30px;\n"
 "}\n"
 "\n"
@@ -460,8 +381,7 @@ public:
 "  border: 2px solid rgba(255,255,255,0.95);\n"
 "  border-top-color: rgba(255,255,255,1.0);\n"
 "  border-left-color: rgba(255,255,255,0.98);\n"
-"  border-bottom-color: rgba(200,210,2"
-                        "08,0.45);\n"
+"  border-bottom-color: rgba(200,210,208,0.45);\n"
 "  border-right-color: rgba(200,210,208,0.35);\n"
 "  border-radius: 30px;\n"
 "  padding: 0px 24px 0px 56px;\n"
@@ -474,7 +394,8 @@ public:
 "}\n"
 "QLineEdit#tasksSearchBar:hover {\n"
 "  background: qlineargradient(x1:0, y1:0, x2:0, y2:1,\n"
-"    stop:0 rgba(255,255,255,0.94),\n"
+"    stop:0 rgba("
+                        "255,255,255,0.94),\n"
 "    stop:1 rgba(255,255,255,0.68));\n"
 "  border: 2px solid rgba(255,255,255,1.0);\n"
 "  border-bottom-color: rgba(200,210,208,0.50);\n"
@@ -492,8 +413,7 @@ public:
 "QPushButton#filterAll {\n"
 "  background-color: #06B6A4;\n"
 "  border: none;\n"
-"  border-radius: 28px"
-                        ";\n"
+"  border-radius: 28px;\n"
 "  color: white;\n"
 "  font-family: 'Inter';\n"
 "  font-size: 18px;\n"
@@ -509,7 +429,8 @@ public:
 "  border: 1px solid #065F56;\n"
 "  border-radius: 28px;\n"
 "  color: #065F56;\n"
-"  font-family: 'Inter';\n"
+""
+                        "  font-family: 'Inter';\n"
 "  font-size: 18px;\n"
 "  font-weight: 600;\n"
 "  padding: 6px 20px;\n"
@@ -561,7 +482,7 @@ public:
         homeBackground->setGeometry(QRect(0, 0, 1368, 1024));
         homeFadeOverlay = new QLabel(homePage);
         homeFadeOverlay->setObjectName("homeFadeOverlay");
-        homeFadeOverlay->setGeometry(QRect(0, 0, 1368, 1024));
+        homeFadeOverlay->setGeometry(QRect(0, -380, 1368, 1451));
         profileImage = new QLabel(homePage);
         profileImage->setObjectName("profileImage");
         profileImage->setGeometry(QRect(48, 68, 76, 76));
@@ -575,20 +496,9 @@ public:
         greetingName->setObjectName("greetingName");
         greetingName->setGeometry(QRect(360, 60, 400, 90));
         greetingName->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
-        mindLabel = new QLabel(homePage);
-        mindLabel->setObjectName("mindLabel");
-        mindLabel->setGeometry(QRect(48, 171, 600, 50));
-        mindLabel->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
-        taskInput = new QLineEdit(homePage);
-        taskInput->setObjectName("taskInput");
-        taskInput->setGeometry(QRect(48, 245, 581, 66));
-        addButton = new QPushButton(homePage);
-        addButton->setObjectName("addButton");
-        addButton->setGeometry(QRect(640, 244, 218, 64));
-        addButton->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         tasksHeading = new QLabel(homePage);
         tasksHeading->setObjectName("tasksHeading");
-        tasksHeading->setGeometry(QRect(48, 346, 446, 112));
+        tasksHeading->setGeometry(QRect(48, 160, 446, 112));
         tasksHeading->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
         cardTotalTasks = new QFrame(homePage);
         cardTotalTasks->setObjectName("cardTotalTasks");
@@ -711,444 +621,91 @@ public:
         calendarPageTitle->setGeometry(QRect(109, 56, 331, 100));
         calendarPageTitle->setTextFormat(Qt::TextFormat::RichText);
         calendarPageTitle->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
-        calendarDate = new QLabel(calendarPage);
-        calendarDate->setObjectName("calendarDate");
-        calendarDate->setGeometry(QRect(440, 70, 241, 100));
-        calendarDate->setAutoFillBackground(false);
-        calendarDate->setTextFormat(Qt::TextFormat::RichText);
-        calendarDate->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
-        layoutWidget = new QWidget(calendarPage);
-        layoutWidget->setObjectName("layoutWidget");
-        layoutWidget->setGeometry(QRect(20, 190, 1180, 128));
-        dayPickerRow_2 = new QHBoxLayout(layoutWidget);
-        dayPickerRow_2->setSpacing(0);
-        dayPickerRow_2->setObjectName("dayPickerRow_2");
-        dayPickerRow_2->setContentsMargins(0, 0, 0, 0);
-        calBtnPrev = new QPushButton(layoutWidget);
+        calendarTitleLabel = new QLabel(calendarPage);
+        calendarTitleLabel->setObjectName("calendarTitleLabel");
+        calendarTitleLabel->setGeometry(QRect(410, 50, 300, 40));
+        calendarTitleLabel->setStyleSheet(QString::fromUtf8("font-family:'Inter'; font-size:26px; font-weight:700; color:#111111; background: transparent;"));
+        calendarSubtitle = new QLabel(calendarPage);
+        calendarSubtitle->setObjectName("calendarSubtitle");
+        calendarSubtitle->setGeometry(QRect(410, 90, 300, 20));
+        calendarSubtitle->setStyleSheet(QString::fromUtf8("font-family:'Inter'; font-size:14px; color:#6A7282; background: transparent;"));
+        calendarWeekRange = new QLabel(calendarPage);
+        calendarWeekRange->setObjectName("calendarWeekRange");
+        calendarWeekRange->setGeometry(QRect(900, 120, 250, 44));
+        calendarWeekRange->setStyleSheet(QString::fromUtf8("font-family:'Inter'; font-size:16px; font-weight:600; color:#111111; background: transparent;"));
+        calendarWeekRange->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        calBtnPrev = new QPushButton(calendarPage);
         calBtnPrev->setObjectName("calBtnPrev");
+        calBtnPrev->setGeometry(QRect(850, 120, 44, 44));
         calBtnPrev->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
-        calBtnPrev->setStyleSheet(QString::fromUtf8("min-width: 60px;\n"
-"max-width: 60px;\n"
-"min-height: 60px;\n"
-"max-height: 60px;\n"
-""));
-        QIcon icon;
-        icon.addFile(QString::fromUtf8(":/left_arrow.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
-        calBtnPrev->setIcon(icon);
-        calBtnPrev->setIconSize(QSize(36, 36));
-
-        dayPickerRow_2->addWidget(calBtnPrev);
-
-        dayCardsLayout_2 = new QHBoxLayout();
-        dayCardsLayout_2->setSpacing(12);
-        dayCardsLayout_2->setObjectName("dayCardsLayout_2");
-        dayCardY = new QFrame(layoutWidget);
-        dayCardY->setObjectName("dayCardY");
-        dayCardY->setMinimumSize(QSize(132, 124));
-        dayCardY->setMaximumSize(QSize(132, 124));
-        dayCardY->setStyleSheet(QString::fromUtf8("\n"
-"              QFrame#dayCardY {\n"
-"                background: transparent;\n"
-"                border: 1px solid rgba(0, 0, 0, 0.1);\n"
-"                border-radius: 8px;\n"
-"				 padding: 8px;\n"
-"              }\n"
-"			 QFrame#dayCardY:hover {\n"
-"            	background-color: rgba(6, 182, 164, 0.1);\n"
-"              }\n"
-"             "));
-        dayCardYL = new QVBoxLayout(dayCardY);
-        dayCardYL->setSpacing(8);
-        dayCardYL->setContentsMargins(6, 6, 6, 6);
-        dayCardYL->setObjectName("dayCardYL");
-        dayLabelY = new QLabel(dayCardY);
-        dayLabelY->setObjectName("dayLabelY");
-        dayLabelY->setStyleSheet(QString::fromUtf8("\n"
-"                 QLabel {\n"
-"                   color: rgba(0, 0, 0, 0.5);\n"
-"                   font-family: \"Inter\";\n"
-"                   font-size: 12px;\n"
-"                   font-weight: 600;\n"
-"                   letter-spacing: 0.48px;\n"
-"                   text-transform: uppercase;\n"
-"                   border: none;\n"
-"                 }\n"
-"                "));
-        dayLabelY->setAlignment(Qt::AlignmentFlag::AlignCenter);
-
-        dayCardYL->addWidget(dayLabelY, 0, Qt::AlignmentFlag::AlignHCenter);
-
-        dayNumY = new QLabel(dayCardY);
-        dayNumY->setObjectName("dayNumY");
-        dayNumY->setStyleSheet(QString::fromUtf8("\n"
-"                 QLabel {\n"
-"                   color: rgba(0, 0, 0, 0.5);\n"
-"                   font-family: \"Inter\";\n"
-"                   font-size: 50px;\n"
-"                   font-weight: 600;\n"
-"                   letter-spacing: 2px;\n"
-"                   border: none;\n"
-"                 }\n"
-"                "));
-        dayNumY->setAlignment(Qt::AlignmentFlag::AlignCenter);
-
-        dayCardYL->addWidget(dayNumY, 0, Qt::AlignmentFlag::AlignHCenter);
-
-
-        dayCardsLayout_2->addWidget(dayCardY);
-
-        dayCard0 = new QFrame(layoutWidget);
-        dayCard0->setObjectName("dayCard0");
-        dayCard0->setMinimumSize(QSize(132, 124));
-        dayCard0->setMaximumSize(QSize(132, 124));
-        dayCard0->setStyleSheet(QString::fromUtf8("QFrame#dayCard0{\n"
-"    background-color: #06B6A4;\n"
-"    border: none;\n"
-"    border-radius: 8px;\n"
-"    padding: 8px;\n"
-"}\n"
-"\n"
-"QFrame#dayCard0:hover{\n"
-"    background-color: #059E8E;\n"
-"}\n"
-"\n"
-""));
-        dayCard0L = new QVBoxLayout(dayCard0);
-        dayCard0L->setSpacing(8);
-        dayCard0L->setContentsMargins(6, 6, 6, 6);
-        dayCard0L->setObjectName("dayCard0L");
-        dayCard0L->setContentsMargins(-1, 6, -1, 6);
-        dayLabel0 = new QLabel(dayCard0);
-        dayLabel0->setObjectName("dayLabel0");
-        dayLabel0->setEnabled(true);
-        QFont font;
-        font.setFamilies({QString::fromUtf8("Inter")});
-        font.setWeight(QFont::DemiBold);
-        dayLabel0->setFont(font);
-        dayLabel0->setStyleSheet(QString::fromUtf8("\n"
-"                 QLabel {\n"
-"                   color: rgba(255, 255, 255, 0.8);\n"
-"                   font-family: \"Inter\";\n"
-"                   font-size: 12px;\n"
-"                   font-weight: 600;\n"
-"                   letter-spacing: 0.48px;\n"
-"                   border: none;\n"
-"                 }\n"
-"                "));
-        dayLabel0->setLineWidth(1);
-        dayLabel0->setAlignment(Qt::AlignmentFlag::AlignCenter);
-
-        dayCard0L->addWidget(dayLabel0, 0, Qt::AlignmentFlag::AlignHCenter);
-
-        dayNum0 = new QLabel(dayCard0);
-        dayNum0->setObjectName("dayNum0");
-        dayNum0->setStyleSheet(QString::fromUtf8("\n"
-"                 QLabel {\n"
-"                   color: rgba(255, 254, 254, 0.8);\n"
-"                   font-family: \"Inter\";\n"
-"                   font-size: 50px;\n"
-"                   font-weight: 600;\n"
-"                   letter-spacing: 2px;\n"
-"                   border: none;\n"
-"                 }\n"
-"                "));
-        dayNum0->setAlignment(Qt::AlignmentFlag::AlignCenter);
-
-        dayCard0L->addWidget(dayNum0);
-
-
-        dayCardsLayout_2->addWidget(dayCard0);
-
-        dayCard1 = new QFrame(layoutWidget);
-        dayCard1->setObjectName("dayCard1");
-        dayCard1->setMinimumSize(QSize(132, 124));
-        dayCard1->setMaximumSize(QSize(132, 124));
-        dayCard1->setStyleSheet(QString::fromUtf8("\n"
-"              QFrame#dayCard1{\n"
-"                background: transparent;\n"
-"                border: 1px solid rgba(0, 0, 0, 0.1);\n"
-"                border-radius: 8px;\n"
-"				 padding: 8px;\n"
-"              }\n"
-"			 QFrame#dayCard1:hover {\n"
-"            	background-color: rgba(6, 182, 164, 0.1);\n"
-"              }\n"
-"             "));
-        dayCard1L = new QVBoxLayout(dayCard1);
-        dayCard1L->setSpacing(8);
-        dayCard1L->setContentsMargins(6, 6, 6, 6);
-        dayCard1L->setObjectName("dayCard1L");
-        dayLabel1 = new QLabel(dayCard1);
-        dayLabel1->setObjectName("dayLabel1");
-        dayLabel1->setStyleSheet(QString::fromUtf8("\n"
-"                 QLabel {\n"
-"                   color: rgba(0, 0, 0, 0.5);\n"
-"                   font-family: \"Inter\";\n"
-"                   font-size: 12px;\n"
-"                   font-weight: 600;\n"
-"                   letter-spacing: 0.48px;\n"
-"                   border: none;\n"
-"                 }\n"
-"                "));
-        dayLabel1->setAlignment(Qt::AlignmentFlag::AlignCenter);
-
-        dayCard1L->addWidget(dayLabel1, 0, Qt::AlignmentFlag::AlignHCenter);
-
-        dayNum1 = new QLabel(dayCard1);
-        dayNum1->setObjectName("dayNum1");
-        dayNum1->setStyleSheet(QString::fromUtf8("\n"
-"                 QLabel {\n"
-"                   color: rgba(0, 0, 0, 0.5);\n"
-"                   font-family: \"Inter\";\n"
-"                   font-size: 50px;\n"
-"                   font-weight: 600;\n"
-"                   letter-spacing: 2px;\n"
-"                   border: none;\n"
-"                 }\n"
-"                "));
-        dayNum1->setAlignment(Qt::AlignmentFlag::AlignCenter);
-
-        dayCard1L->addWidget(dayNum1, 0, Qt::AlignmentFlag::AlignHCenter);
-
-
-        dayCardsLayout_2->addWidget(dayCard1);
-
-        dayCard2 = new QFrame(layoutWidget);
-        dayCard2->setObjectName("dayCard2");
-        dayCard2->setMinimumSize(QSize(132, 124));
-        dayCard2->setMaximumSize(QSize(132, 124));
-        dayCard2->setStyleSheet(QString::fromUtf8("\n"
-"              QFrame#dayCard2{\n"
-"                background: transparent;\n"
-"                border: 1px solid rgba(0, 0, 0, 0.1);\n"
-"                border-radius: 8px;\n"
-"				 padding: 8px;\n"
-"              }\n"
-" 			 QFrame#dayCard2:hover {\n"
-"            	background-color: rgba(6, 182, 164, 0.1);\n"
-"              }\n"
-"             "));
-        dayCard2L = new QVBoxLayout(dayCard2);
-        dayCard2L->setSpacing(8);
-        dayCard2L->setContentsMargins(6, 6, 6, 6);
-        dayCard2L->setObjectName("dayCard2L");
-        dayLabel2 = new QLabel(dayCard2);
-        dayLabel2->setObjectName("dayLabel2");
-        dayLabel2->setStyleSheet(QString::fromUtf8("\n"
-"                 QLabel {\n"
-"                   color: rgba(0, 0, 0, 0.5);\n"
-"                   font-family: \"Inter\";\n"
-"                   font-size: 12px;\n"
-"                   font-weight: 600;\n"
-"                   letter-spacing: 0.48px;\n"
-"                   border: none;\n"
-"                 }\n"
-"                "));
-        dayLabel2->setAlignment(Qt::AlignmentFlag::AlignCenter);
-
-        dayCard2L->addWidget(dayLabel2, 0, Qt::AlignmentFlag::AlignHCenter);
-
-        dayNum2 = new QLabel(dayCard2);
-        dayNum2->setObjectName("dayNum2");
-        dayNum2->setStyleSheet(QString::fromUtf8("\n"
-"                 QLabel {\n"
-"                   color: rgba(0, 0, 0, 0.5);\n"
-"                   font-family: \"Inter\";\n"
-"                   font-size: 50px;\n"
-"                   font-weight: 600;\n"
-"                   letter-spacing: 2px;\n"
-"                   border: none;\n"
-"                 }\n"
-"                "));
-        dayNum2->setAlignment(Qt::AlignmentFlag::AlignCenter);
-
-        dayCard2L->addWidget(dayNum2, 0, Qt::AlignmentFlag::AlignHCenter);
-
-
-        dayCardsLayout_2->addWidget(dayCard2);
-
-        dayCard3 = new QFrame(layoutWidget);
-        dayCard3->setObjectName("dayCard3");
-        dayCard3->setMinimumSize(QSize(132, 124));
-        dayCard3->setMaximumSize(QSize(132, 124));
-        dayCard3->setStyleSheet(QString::fromUtf8("\n"
-"              QFrame#dayCard3 {\n"
-"                background: transparent;\n"
-"                border: 1px solid rgba(0, 0, 0, 0.1);\n"
-"                border-radius: 8px;\n"
-"				 padding: 8px;\n"
-"              }\n"
-"              QFrame#dayCard3:hover {\n"
-"            	background-color: rgba(6, 182, 164, 0.1);\n"
-"              }"));
-        dayCard3L = new QVBoxLayout(dayCard3);
-        dayCard3L->setSpacing(8);
-        dayCard3L->setContentsMargins(6, 6, 6, 6);
-        dayCard3L->setObjectName("dayCard3L");
-        dayLabel3 = new QLabel(dayCard3);
-        dayLabel3->setObjectName("dayLabel3");
-        dayLabel3->setStyleSheet(QString::fromUtf8("\n"
-"                 QLabel {\n"
-"                   color: rgba(0, 0, 0, 0.5);\n"
-"                   font-family: \"Inter\";\n"
-"                   font-size: 12px;\n"
-"                   font-weight: 600;\n"
-"                   letter-spacing: 0.48px;\n"
-"                   border: none;\n"
-"                 }\n"
-"                "));
-        dayLabel3->setAlignment(Qt::AlignmentFlag::AlignCenter);
-
-        dayCard3L->addWidget(dayLabel3, 0, Qt::AlignmentFlag::AlignHCenter);
-
-        dayNum3 = new QLabel(dayCard3);
-        dayNum3->setObjectName("dayNum3");
-        dayNum3->setStyleSheet(QString::fromUtf8("\n"
-"                 QLabel {\n"
-"                   color: rgba(0, 0, 0, 0.5);\n"
-"                   font-family: \"Inter\";\n"
-"                   font-size: 50px;\n"
-"                   font-weight: 600;\n"
-"                   letter-spacing: 2px;\n"
-"                   border: none;\n"
-"                 }\n"
-"                "));
-        dayNum3->setAlignment(Qt::AlignmentFlag::AlignCenter);
-
-        dayCard3L->addWidget(dayNum3, 0, Qt::AlignmentFlag::AlignHCenter);
-
-
-        dayCardsLayout_2->addWidget(dayCard3);
-
-        dayCard4 = new QFrame(layoutWidget);
-        dayCard4->setObjectName("dayCard4");
-        dayCard4->setMinimumSize(QSize(132, 124));
-        dayCard4->setMaximumSize(QSize(132, 124));
-        dayCard4->setStyleSheet(QString::fromUtf8("\n"
-"              QFrame#dayCard4 {\n"
-"                background: transparent;\n"
-"                border: 1px solid rgba(0, 0, 0, 0.1);\n"
-"                border-radius: 8px;\n"
-"				 padding: 8px;\n"
-"              }\n"
-"              QFrame#dayCard4:hover {\n"
-"            	background-color: rgba(6, 182, 164, 0.1);\n"
-"              }"));
-        dayCard4L = new QVBoxLayout(dayCard4);
-        dayCard4L->setSpacing(8);
-        dayCard4L->setContentsMargins(6, 6, 6, 6);
-        dayCard4L->setObjectName("dayCard4L");
-        dayLabel4 = new QLabel(dayCard4);
-        dayLabel4->setObjectName("dayLabel4");
-        dayLabel4->setStyleSheet(QString::fromUtf8("\n"
-"                 QLabel {\n"
-"                   color: rgba(0, 0, 0, 0.5);\n"
-"                   font-family: \"Inter\";\n"
-"                   font-size: 12px;\n"
-"                   font-weight: 600;\n"
-"                   letter-spacing: 0.48px;\n"
-"                   border: none;\n"
-"                 }\n"
-"                "));
-        dayLabel4->setAlignment(Qt::AlignmentFlag::AlignCenter);
-
-        dayCard4L->addWidget(dayLabel4, 0, Qt::AlignmentFlag::AlignHCenter);
-
-        dayNum4 = new QLabel(dayCard4);
-        dayNum4->setObjectName("dayNum4");
-        dayNum4->setStyleSheet(QString::fromUtf8("\n"
-"                 QLabel {\n"
-"                   color: rgba(0, 0, 0, 0.5);\n"
-"                   font-family: \"Inter\";\n"
-"                   font-size: 50px;\n"
-"                   font-weight: 600;\n"
-"                   letter-spacing: 2px;\n"
-"                   border: none;\n"
-"                 }\n"
-"                "));
-        dayNum4->setAlignment(Qt::AlignmentFlag::AlignCenter);
-
-        dayCard4L->addWidget(dayNum4, 0, Qt::AlignmentFlag::AlignHCenter);
-
-
-        dayCardsLayout_2->addWidget(dayCard4);
-
-        dayCard5 = new QFrame(layoutWidget);
-        dayCard5->setObjectName("dayCard5");
-        dayCard5->setMinimumSize(QSize(132, 124));
-        dayCard5->setMaximumSize(QSize(132, 124));
-        dayCard5->setStyleSheet(QString::fromUtf8("\n"
-"              QFrame#dayCard5 {\n"
-"                background: transparent;\n"
-"                border: 1px solid rgba(0, 0, 0, 0.1);\n"
-"                border-radius: 8px;\n"
-"              }\n"
-"			 QFrame#dayCard5:hover {\n"
-"            	background-color: rgba(6, 182, 164, 0.1);\n"
-"              }\n"
-"             "));
-        dayCard5L = new QVBoxLayout(dayCard5);
-        dayCard5L->setSpacing(8);
-        dayCard5L->setContentsMargins(6, 6, 6, 6);
-        dayCard5L->setObjectName("dayCard5L");
-        dayLabel5 = new QLabel(dayCard5);
-        dayLabel5->setObjectName("dayLabel5");
-        dayLabel5->setStyleSheet(QString::fromUtf8("\n"
-"                 QLabel {\n"
-"                   color: rgba(0, 0, 0, 0.5);\n"
-"                   font-family: \"Inter\";\n"
-"                   font-size: 12px;\n"
-"                   font-weight: 600;\n"
-"                   letter-spacing: 0.48px;\n"
-"                   border: none;\n"
-"                 }\n"
-"                "));
-        dayLabel5->setAlignment(Qt::AlignmentFlag::AlignCenter);
-
-        dayCard5L->addWidget(dayLabel5, 0, Qt::AlignmentFlag::AlignHCenter);
-
-        dayNum5 = new QLabel(dayCard5);
-        dayNum5->setObjectName("dayNum5");
-        dayNum5->setStyleSheet(QString::fromUtf8("\n"
-"                 QLabel {\n"
-"                   color: rgba(0, 0, 0, 0.5);\n"
-"                   font-family: \"Inter\";\n"
-"                   font-size: 50px;\n"
-"                   font-weight: 600;\n"
-"                   letter-spacing: 2px;\n"
-"                   border: none;\n"
-"                 }\n"
-"                "));
-        dayNum5->setAlignment(Qt::AlignmentFlag::AlignCenter);
-
-        dayCard5L->addWidget(dayNum5, 0, Qt::AlignmentFlag::AlignHCenter);
-
-
-        dayCardsLayout_2->addWidget(dayCard5);
-
-
-        dayPickerRow_2->addLayout(dayCardsLayout_2);
-
-        calBtnNext = new QPushButton(layoutWidget);
+        calBtnPrev->setStyleSheet(QString::fromUtf8("\n"
+"        QPushButton { \n"
+"            border: 1.5px solid rgba(0,0,0,0.06); \n"
+"            border-radius: 12px; \n"
+"            font-size: 18px; \n"
+"            color: #6A7282; \n"
+"            background: white; \n"
+"        } \n"
+"        QPushButton:hover { \n"
+"            background: #F8F9FA; \n"
+"            color: #06B6A4;\n"
+"            border-color: rgba(6, 182, 164, 0.2);\n"
+"        }\n"
+"        QPushButton:pressed {\n"
+"            background: #F1F3F5;\n"
+"        }\n"
+"      "));
+        calBtnNext = new QPushButton(calendarPage);
         calBtnNext->setObjectName("calBtnNext");
+        calBtnNext->setGeometry(QRect(1160, 120, 44, 44));
         calBtnNext->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
-        calBtnNext->setStyleSheet(QString::fromUtf8("min-width: 60px;\n"
-"max-width: 60px;\n"
-"min-height: 60px;\n"
-"max-height: 60px;\n"
-""));
-        QIcon icon1;
-        icon1.addFile(QString::fromUtf8(":/right_arrow.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
-        calBtnNext->setIcon(icon1);
-        calBtnNext->setIconSize(QSize(36, 36));
-
-        dayPickerRow_2->addWidget(calBtnNext);
-
+        calBtnNext->setStyleSheet(QString::fromUtf8("\n"
+"        QPushButton { \n"
+"            border: 1.5px solid rgba(0,0,0,0.06); \n"
+"            border-radius: 12px; \n"
+"            font-size: 18px; \n"
+"            color: #6A7282; \n"
+"            background: white; \n"
+"        } \n"
+"        QPushButton:hover { \n"
+"            background: #F8F9FA; \n"
+"            color: #06B6A4;\n"
+"            border-color: rgba(6, 182, 164, 0.2);\n"
+"        }\n"
+"        QPushButton:pressed {\n"
+"            background: #F1F3F5;\n"
+"        }\n"
+"      "));
+        calendarContainer = new QFrame(calendarPage);
+        calendarContainer->setObjectName("calendarContainer");
+        calendarContainer->setGeometry(QRect(109, 180, 1200, 780));
+        addScheduleBtn = new QPushButton(calendarPage);
+        addScheduleBtn->setObjectName("addScheduleBtn");
+        addScheduleBtn->setGeometry(QRect(1220, 120, 140, 44));
+        addScheduleBtn->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
+        addScheduleBtn->setStyleSheet(QString::fromUtf8("\n"
+"        QPushButton {\n"
+"            background-color: #06B6A4;\n"
+"            color: white;\n"
+"            border: none;\n"
+"            border-radius: 22px;\n"
+"            font-family: 'Inter';\n"
+"            font-weight: 700;\n"
+"            font-size: 14px;\n"
+"        }\n"
+"        QPushButton:hover {\n"
+"            background-color: #059E8E;\n"
+"        }\n"
+"      "));
         contentStack->addWidget(calendarPage);
+        fabButton = new QPushButton(MainWindow);
+        fabButton->setObjectName("fabButton");
+        fabButton->setGeometry(QRect(1330, 916, 64, 64));
+        fabButton->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
 
         retranslateUi(MainWindow);
 
-        contentStack->setCurrentIndex(2);
+        contentStack->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -1165,9 +722,6 @@ public:
         profileImage->setText(QString());
         greetingHello->setText(QCoreApplication::translate("MainWindow", "Hello,", nullptr));
         greetingName->setText(QCoreApplication::translate("MainWindow", " Ahmed Hagag", nullptr));
-        mindLabel->setText(QCoreApplication::translate("MainWindow", "What's On Your Mind?", nullptr));
-        taskInput->setPlaceholderText(QCoreApplication::translate("MainWindow", "Type a task...", nullptr));
-        addButton->setText(QCoreApplication::translate("MainWindow", "Add \342\244\266", nullptr));
         tasksHeading->setText(QCoreApplication::translate("MainWindow", "Tasks", nullptr));
         labelTotalTasks->setText(QCoreApplication::translate("MainWindow", "Total Tasks", nullptr));
         valueTotalTasks->setText(QCoreApplication::translate("MainWindow", "24", nullptr));
@@ -1186,23 +740,13 @@ public:
         filterOverdue->setText(QCoreApplication::translate("MainWindow", "Overdue", nullptr));
         filterHighPriority->setText(QCoreApplication::translate("MainWindow", "High Priority", nullptr));
         calendarPageTitle->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-family:'Inter'; font-weight:700; color:#06b6a4;\">Calendar</span></p></body></html>", nullptr));
-        calendarDate->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-family:'Inter'; font-size:60px; font-weight:500; color:#7b8185;\">20 Feb</span></p></body></html>", nullptr));
-        calBtnPrev->setText(QString());
-        dayLabelY->setText(QCoreApplication::translate("MainWindow", "Feb THU", nullptr));
-        dayNumY->setText(QCoreApplication::translate("MainWindow", "19", nullptr));
-        dayLabel0->setText(QCoreApplication::translate("MainWindow", "Feb FRI", nullptr));
-        dayNum0->setText(QCoreApplication::translate("MainWindow", "20", nullptr));
-        dayLabel1->setText(QCoreApplication::translate("MainWindow", "Feb SAT", nullptr));
-        dayNum1->setText(QCoreApplication::translate("MainWindow", "21", nullptr));
-        dayLabel2->setText(QCoreApplication::translate("MainWindow", "Feb SUN", nullptr));
-        dayNum2->setText(QCoreApplication::translate("MainWindow", "22", nullptr));
-        dayLabel3->setText(QCoreApplication::translate("MainWindow", "Feb MON", nullptr));
-        dayNum3->setText(QCoreApplication::translate("MainWindow", "23", nullptr));
-        dayLabel4->setText(QCoreApplication::translate("MainWindow", "Feb TUE", nullptr));
-        dayNum4->setText(QCoreApplication::translate("MainWindow", "24", nullptr));
-        dayLabel5->setText(QCoreApplication::translate("MainWindow", "Feb WED", nullptr));
-        dayNum5->setText(QCoreApplication::translate("MainWindow", "25", nullptr));
-        calBtnNext->setText(QString());
+        calendarTitleLabel->setText(QCoreApplication::translate("MainWindow", "My Daily Life", nullptr));
+        calendarSubtitle->setText(QCoreApplication::translate("MainWindow", "Plan, track, and organize your schedule.", nullptr));
+        calendarWeekRange->setText(QCoreApplication::translate("MainWindow", "June 22 - 28, 2026", nullptr));
+        calBtnPrev->setText(QCoreApplication::translate("MainWindow", "\342\206\220", nullptr));
+        calBtnNext->setText(QCoreApplication::translate("MainWindow", "\342\206\222", nullptr));
+        addScheduleBtn->setText(QCoreApplication::translate("MainWindow", "+ Add Schedule", nullptr));
+        fabButton->setText(QCoreApplication::translate("MainWindow", "+", nullptr));
     } // retranslateUi
 
 };

@@ -10,7 +10,6 @@
 #define UI_MAINWINDOW_H
 
 #include <QtCore/QVariant>
-#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QLabel>
@@ -37,9 +36,6 @@ public:
     QLabel *profileImage;
     QLabel *greetingHello;
     QLabel *greetingName;
-    QLabel *mindLabel;
-    QLineEdit *taskInput;
-    QPushButton *addButton;
     QLabel *tasksHeading;
     QFrame *cardTotalTasks;
     QLabel *labelTotalTasks;
@@ -73,8 +69,14 @@ public:
     QLabel *calendarBackground;
     QLabel *calendarFadeOverlay;
     QLabel *calendarPageTitle;
+    QLabel *calendarTitleLabel;
+    QLabel *calendarSubtitle;
+    QLabel *calendarWeekRange;
     QPushButton *calBtnPrev;
     QPushButton *calBtnNext;
+    QFrame *calendarContainer;
+    QPushButton *addScheduleBtn;
+    QPushButton *fabButton;
 
     void setupUi(QWidget *MainWindow)
     {
@@ -162,73 +164,26 @@ public:
 "  color: #111111;\n"
 "}\n"
 "\n"
-"QLabel#mindLabel {\n"
-"  font-family: 'Roboto Flex';\n"
-"  font-weight: 900;\n"
-"  font-size: 36px;\n"
-"  color: #111111;\n"
-"}\n"
-"\n"
-"QLineEdit#taskInput {\n"
-"  background: qlineargradient(x1:0, y1:0, x2:0, y2:1,\n"
-"    stop:0 rgba(255,255,255,0.88),\n"
-"    stop:1 rgba(255,255,255,0.58));\n"
-"  border: 2px solid rgba(255,255,255,0.95);\n"
-"  border-top-color: rgba(255,255,25"
-                        "5,1.0);\n"
-"  border-left-color: rgba(255,255,255,0.98);\n"
-"  border-bottom-color: rgba(200,210,208,0.45);\n"
-"  border-right-color: rgba(200,210,208,0.35);\n"
-"  border-radius: 31px;\n"
-"  padding: 0px 24px;\n"
-"  font-family: 'Inter';\n"
-"  font-size: 20px;\n"
-"  color: #374151;\n"
-"  font-weight: 600;\n"
-"  min-height: 62px;\n"
-"  selection-background-color: #06B6A4;\n"
-"  selection-color: white;\n"
-"}\n"
-"\n"
-"QLineEdit#taskInput:hover {\n"
-"  background: qlineargradient(x1:0, y1:0, x2:0, y2:1,\n"
-"    stop:0 rgba(255,255,255,0.94),\n"
-"    stop:1 rgba(255,255,255,0.68));\n"
-"  border: 2px solid rgba(255,255,255,1.0);\n"
-"  border-bottom-color: rgba(200,210,208,0.50);\n"
-"}\n"
-"\n"
-"QLineEdit#taskInput:focus {\n"
-"  background: qlineargradient(x1:0, y1:0, x2:0, y2:1,\n"
-"    stop:0 rgba(255,255,255,0.96),\n"
-"    stop:1 rgba(255,255,255,0.72));\n"
-"  border: 2.5px solid rgba(6, 182, 164, 0.45);\n"
-"  border-top-color: rgba(6, 182, 164, 0.55);\n"
-"}\n"
-"\n"
-"QPushButton#addButton {\n"
-"  background-color: "
-                        "#06B6A4;\n"
+"QPushButton#fabButton {\n"
+"  background-color: #06B6A4;\n"
 "  color: white;\n"
 "  border: none;\n"
-"  border-radius: 31px;\n"
-"  font-family: 'Manrope';\n"
-"  font-weight: 800;\n"
-"  font-size: 30px;\n"
-"  min-width: 170px;\n"
-"  min-height: 62px;\n"
-"  padding: 0px 24px;\n"
+"  border-radius: 32px;\n"
+"  font-family: 'Inter';\n"
+"  font-weight: 300;\n"
+"  font-size: 36px;\n"
 "}\n"
 "\n"
-"QPushButton#addButton:hover {\n"
+"QPushButton#fabButton:hover {\n"
 "  background-color: #059E8E;\n"
 "}\n"
 "\n"
-"QPushButton#addButton:pressed {\n"
+"QPushButton#fabButton:pressed {\n"
 "  background-color: #048A7C;\n"
 "}\n"
 "\n"
-"QLabel#questionMark {\n"
+"QLabel#ques"
+                        "tionMark {\n"
 "  font-family: 'Pecita';\n"
 "  font-size: 64px;\n"
 "  color: #06B6A4;\n"
@@ -250,8 +205,7 @@ public:
 "    stop:0.5 rgba(255,255,255,0.78),\n"
 "    stop:1 rgba(245,248,247,0.60));\n"
 "  border: 2px solid rgba(255,255,255,0.96);\n"
-"  border-top-color: rgba(255,255,255,1."
-                        "0);\n"
+"  border-top-color: rgba(255,255,255,1.0);\n"
 "  border-left-color: rgba(255,255,255,0.98);\n"
 "  border-bottom-color: rgba(200,210,208,0.40);\n"
 "  border-right-color: rgba(200,210,208,0.30);\n"
@@ -263,7 +217,8 @@ public:
 "QFrame#cardProductivity:hover,\n"
 "QFrame#cardCompleted:hover {\n"
 "  background: qlineargradient(x1:0, y1:0, x2:0, y2:1,\n"
-"    stop:0 rgba(255,255,255,0.98),\n"
+"    stop:0 rgba(255,25"
+                        "5,255,0.98),\n"
 "    stop:0.5 rgba(255,255,255,0.88),\n"
 "    stop:1 rgba(250,252,251,0.72));\n"
 "  border: 2px solid rgba(255,255,255,1.0);\n"
@@ -286,8 +241,7 @@ public:
 "QLabel#valueProductivity,\n"
 "QLabel#valueCompleted {\n"
 "  font-family: 'Inter';\n"
-"  font-weight"
-                        ": 900;\n"
+"  font-weight: 900;\n"
 "  font-size: 36px;\n"
 "  color: #111111;\n"
 "  background: transparent;\n"
@@ -306,7 +260,8 @@ public:
 "  background-color: #FFEDD4;\n"
 "  border-radius: 14px;\n"
 "  min-width: 48px;\n"
-"  min-height: 48px;\n"
+""
+                        "  min-height: 48px;\n"
 "  max-width: 48px;\n"
 "  max-height: 48px;\n"
 "}\n"
@@ -336,8 +291,7 @@ public:
 "  background: transparent;\n"
 "}\n"
 "\n"
-""
-                        "QLabel#iconInProgress {\n"
+"QLabel#iconInProgress {\n"
 "  color: #F54900;\n"
 "  font-weight: 900;\n"
 "  font-size: 24px;\n"
@@ -357,7 +311,8 @@ public:
 "  font-size: 24px;\n"
 "  background: transparent;\n"
 "}\n"
-"\n"
+""
+                        "\n"
 "QStackedWidget#contentStack {\n"
 "  background: transparent;\n"
 "}\n"
@@ -376,6 +331,13 @@ public:
 "  color: #065F56;\n"
 "}\n"
 "\n"
+"QLabel#calendarDate {\n"
+"  font-family: 'Inter';\n"
+"  font-weight: 500;\n"
+"  font-size: 60px;\n"
+"  color: #7b8185;\n"
+"}\n"
+"\n"
 "QLabel#homeBackground,\n"
 "QLabel#tasksBackground,\n"
 "QLabel#calendarBackground {\n"
@@ -385,8 +347,7 @@ public:
 "\n"
 "QLabel#homeFadeOverlay,\n"
 "QLabel#tasksFadeOverlay,\n"
-"QLa"
-                        "bel#calendarFadeOverlay {\n"
+"QLabel#calendarFadeOverlay {\n"
 "  background-color: rgba(234, 247, 246, 230);\n"
 "}\n"
 "\n"
@@ -398,7 +359,8 @@ public:
 "\n"
 "QScrollBar::handle:vertical {\n"
 "  background: rgba(6, 95, 86, 0.3);\n"
-"  border-radius: 4px;\n"
+"  border-ra"
+                        "dius: 4px;\n"
 "  min-height: 30px;\n"
 "}\n"
 "\n"
@@ -423,8 +385,7 @@ public:
 "  border-right-color: rgba(200,210,208,0.35);\n"
 "  border-radius: 30px;\n"
 "  padding: 0px 24px 0px 56px;\n"
-"  font-f"
-                        "amily: 'Inter';\n"
+"  font-family: 'Inter';\n"
 "  font-size: 18px;\n"
 "  color: #374151;\n"
 "  min-height: 60px;\n"
@@ -433,7 +394,8 @@ public:
 "}\n"
 "QLineEdit#tasksSearchBar:hover {\n"
 "  background: qlineargradient(x1:0, y1:0, x2:0, y2:1,\n"
-"    stop:0 rgba(255,255,255,0.94),\n"
+"    stop:0 rgba("
+                        "255,255,255,0.94),\n"
 "    stop:1 rgba(255,255,255,0.68));\n"
 "  border: 2px solid rgba(255,255,255,1.0);\n"
 "  border-bottom-color: rgba(200,210,208,0.50);\n"
@@ -442,7 +404,7 @@ public:
 "  background: qlineargradient(x1:0, y1:0, x2:0, y2:1,\n"
 "    stop:0 rgba(255,255,255,0.96),\n"
 "    stop:1 rgba(255,255,255,0.72));\n"
-"  border: 2.5px solid rgba(6, 182, 164, 0.45);\n"
+"  border: 2px solid rgba(6, 182, 164, 0.45);\n"
 "  border-top-color: rgba(6, 182, 164, 0.55);\n"
 "}\n"
 "QLabel#tasksSearchIcon {\n"
@@ -457,8 +419,7 @@ public:
 "  font-size: 18px;\n"
 "  font-weight: 700;\n"
 "  padding: 6px 20px;\n"
-"  min"
-                        "-height: 20px;\n"
+"  min-height: 20px;\n"
 "}\n"
 "QPushButton#filterAll:hover {\n"
 "  background-color: #059E8E;\n"
@@ -468,7 +429,8 @@ public:
 "  border: 1px solid #065F56;\n"
 "  border-radius: 28px;\n"
 "  color: #065F56;\n"
-"  font-family: 'Inter';\n"
+""
+                        "  font-family: 'Inter';\n"
 "  font-size: 18px;\n"
 "  font-weight: 600;\n"
 "  padding: 6px 20px;\n"
@@ -476,11 +438,6 @@ public:
 "}\n"
 "QPushButton#filterOverdue:hover, QPushButton#filterHighPriority:hover {\n"
 "  background-color: rgba(6, 182, 164, 0.1);\n"
-"}\n"
-"QPushButton#filterOverdue:checked, QPushButton#filterHighPriority:checked {\n"
-"  background-color: #06B6A4;\n"
-"  border: none;\n"
-"  color: white;\n"
 "}\n"
 "/* Calendar Arrows */\n"
 "QPushButton#calBtnPrev, QPushButton#calBtnNext {\n"
@@ -525,7 +482,7 @@ public:
         homeBackground->setGeometry(QRect(0, 0, 1368, 1024));
         homeFadeOverlay = new QLabel(homePage);
         homeFadeOverlay->setObjectName("homeFadeOverlay");
-        homeFadeOverlay->setGeometry(QRect(0, 0, 1368, 1024));
+        homeFadeOverlay->setGeometry(QRect(0, -380, 1368, 1451));
         profileImage = new QLabel(homePage);
         profileImage->setObjectName("profileImage");
         profileImage->setGeometry(QRect(48, 68, 76, 76));
@@ -539,20 +496,9 @@ public:
         greetingName->setObjectName("greetingName");
         greetingName->setGeometry(QRect(360, 60, 400, 90));
         greetingName->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
-        mindLabel = new QLabel(homePage);
-        mindLabel->setObjectName("mindLabel");
-        mindLabel->setGeometry(QRect(48, 171, 600, 50));
-        mindLabel->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
-        taskInput = new QLineEdit(homePage);
-        taskInput->setObjectName("taskInput");
-        taskInput->setGeometry(QRect(48, 245, 581, 66));
-        addButton = new QPushButton(homePage);
-        addButton->setObjectName("addButton");
-        addButton->setGeometry(QRect(640, 240, 218, 64));
-        addButton->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         tasksHeading = new QLabel(homePage);
         tasksHeading->setObjectName("tasksHeading");
-        tasksHeading->setGeometry(QRect(48, 346, 446, 112));
+        tasksHeading->setGeometry(QRect(48, 160, 446, 112));
         tasksHeading->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
         cardTotalTasks = new QFrame(homePage);
         cardTotalTasks->setObjectName("cardTotalTasks");
@@ -654,6 +600,7 @@ public:
         filterOverdue->setObjectName("filterOverdue");
         filterOverdue->setGeometry(QRect(213, 144, 148, 58));
         filterOverdue->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
+        filterOverdue->setStyleSheet(QString::fromUtf8(""));
         filterOverdue->setCheckable(true);
         filterHighPriority = new QPushButton(tasksPage);
         filterHighPriority->setObjectName("filterHighPriority");
@@ -671,26 +618,90 @@ public:
         calendarFadeOverlay->setGeometry(QRect(0, 0, 1368, 1024));
         calendarPageTitle = new QLabel(calendarPage);
         calendarPageTitle->setObjectName("calendarPageTitle");
-        calendarPageTitle->setGeometry(QRect(109, 56, 820, 100));
+        calendarPageTitle->setGeometry(QRect(109, 56, 331, 100));
         calendarPageTitle->setTextFormat(Qt::TextFormat::RichText);
         calendarPageTitle->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
+        calendarTitleLabel = new QLabel(calendarPage);
+        calendarTitleLabel->setObjectName("calendarTitleLabel");
+        calendarTitleLabel->setGeometry(QRect(410, 50, 300, 40));
+        calendarTitleLabel->setStyleSheet(QString::fromUtf8("font-family:'Inter'; font-size:26px; font-weight:700; color:#111111; background: transparent;"));
+        calendarSubtitle = new QLabel(calendarPage);
+        calendarSubtitle->setObjectName("calendarSubtitle");
+        calendarSubtitle->setGeometry(QRect(410, 90, 300, 20));
+        calendarSubtitle->setStyleSheet(QString::fromUtf8("font-family:'Inter'; font-size:14px; color:#6A7282; background: transparent;"));
+        calendarWeekRange = new QLabel(calendarPage);
+        calendarWeekRange->setObjectName("calendarWeekRange");
+        calendarWeekRange->setGeometry(QRect(900, 120, 250, 44));
+        calendarWeekRange->setStyleSheet(QString::fromUtf8("font-family:'Inter'; font-size:16px; font-weight:600; color:#111111; background: transparent;"));
+        calendarWeekRange->setAlignment(Qt::AlignmentFlag::AlignCenter);
         calBtnPrev = new QPushButton(calendarPage);
         calBtnPrev->setObjectName("calBtnPrev");
-        calBtnPrev->setGeometry(QRect(96, 163, 60, 60));
+        calBtnPrev->setGeometry(QRect(850, 120, 44, 44));
         calBtnPrev->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
-        QIcon icon;
-        icon.addFile(QString::fromUtf8(":/left_arrow.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
-        calBtnPrev->setIcon(icon);
-        calBtnPrev->setIconSize(QSize(36, 36));
+        calBtnPrev->setStyleSheet(QString::fromUtf8("\n"
+"        QPushButton { \n"
+"            border: 1.5px solid rgba(0,0,0,0.06); \n"
+"            border-radius: 12px; \n"
+"            font-size: 18px; \n"
+"            color: #6A7282; \n"
+"            background: white; \n"
+"        } \n"
+"        QPushButton:hover { \n"
+"            background: #F8F9FA; \n"
+"            color: #06B6A4;\n"
+"            border-color: rgba(6, 182, 164, 0.2);\n"
+"        }\n"
+"        QPushButton:pressed {\n"
+"            background: #F1F3F5;\n"
+"        }\n"
+"      "));
         calBtnNext = new QPushButton(calendarPage);
         calBtnNext->setObjectName("calBtnNext");
-        calBtnNext->setGeometry(QRect(1212, 163, 60, 60));
+        calBtnNext->setGeometry(QRect(1160, 120, 44, 44));
         calBtnNext->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
-        QIcon icon1;
-        icon1.addFile(QString::fromUtf8(":/right_arrow.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
-        calBtnNext->setIcon(icon1);
-        calBtnNext->setIconSize(QSize(36, 36));
+        calBtnNext->setStyleSheet(QString::fromUtf8("\n"
+"        QPushButton { \n"
+"            border: 1.5px solid rgba(0,0,0,0.06); \n"
+"            border-radius: 12px; \n"
+"            font-size: 18px; \n"
+"            color: #6A7282; \n"
+"            background: white; \n"
+"        } \n"
+"        QPushButton:hover { \n"
+"            background: #F8F9FA; \n"
+"            color: #06B6A4;\n"
+"            border-color: rgba(6, 182, 164, 0.2);\n"
+"        }\n"
+"        QPushButton:pressed {\n"
+"            background: #F1F3F5;\n"
+"        }\n"
+"      "));
+        calendarContainer = new QFrame(calendarPage);
+        calendarContainer->setObjectName("calendarContainer");
+        calendarContainer->setGeometry(QRect(109, 180, 1200, 780));
+        addScheduleBtn = new QPushButton(calendarPage);
+        addScheduleBtn->setObjectName("addScheduleBtn");
+        addScheduleBtn->setGeometry(QRect(1220, 120, 140, 44));
+        addScheduleBtn->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
+        addScheduleBtn->setStyleSheet(QString::fromUtf8("\n"
+"        QPushButton {\n"
+"            background-color: #06B6A4;\n"
+"            color: white;\n"
+"            border: none;\n"
+"            border-radius: 22px;\n"
+"            font-family: 'Inter';\n"
+"            font-weight: 700;\n"
+"            font-size: 14px;\n"
+"        }\n"
+"        QPushButton:hover {\n"
+"            background-color: #059E8E;\n"
+"        }\n"
+"      "));
         contentStack->addWidget(calendarPage);
+        fabButton = new QPushButton(MainWindow);
+        fabButton->setObjectName("fabButton");
+        fabButton->setGeometry(QRect(1330, 916, 64, 64));
+        fabButton->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
 
         retranslateUi(MainWindow);
 
@@ -711,9 +722,6 @@ public:
         profileImage->setText(QString());
         greetingHello->setText(QCoreApplication::translate("MainWindow", "Hello,", nullptr));
         greetingName->setText(QCoreApplication::translate("MainWindow", " Ahmed Hagag", nullptr));
-        mindLabel->setText(QCoreApplication::translate("MainWindow", "What's On Your Mind?", nullptr));
-        taskInput->setPlaceholderText(QCoreApplication::translate("MainWindow", "Type a task...", nullptr));
-        addButton->setText(QCoreApplication::translate("MainWindow", "Add \342\244\266", nullptr));
         tasksHeading->setText(QCoreApplication::translate("MainWindow", "Tasks", nullptr));
         labelTotalTasks->setText(QCoreApplication::translate("MainWindow", "Total Tasks", nullptr));
         valueTotalTasks->setText(QCoreApplication::translate("MainWindow", "24", nullptr));
@@ -731,9 +739,14 @@ public:
         filterAll->setText(QCoreApplication::translate("MainWindow", "All", nullptr));
         filterOverdue->setText(QCoreApplication::translate("MainWindow", "Overdue", nullptr));
         filterHighPriority->setText(QCoreApplication::translate("MainWindow", "High Priority", nullptr));
-        calendarPageTitle->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-family:'Inter'; font-size:70px; font-weight:700; color:#06B6A4; letter-spacing:-2px;\">Calendar</span><span style=\" font-family:'Inter'; font-size:70px; font-weight:500; color:#7B8185; letter-spacing:-2px;\"> 20 Feb</span></p></body></html>", nullptr));
-        calBtnPrev->setText(QString());
-        calBtnNext->setText(QString());
+        calendarPageTitle->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-family:'Inter'; font-weight:700; color:#06b6a4;\">Calendar</span></p></body></html>", nullptr));
+        calendarTitleLabel->setText(QCoreApplication::translate("MainWindow", "My Daily Life", nullptr));
+        calendarSubtitle->setText(QCoreApplication::translate("MainWindow", "Plan, track, and organize your schedule.", nullptr));
+        calendarWeekRange->setText(QCoreApplication::translate("MainWindow", "June 22 - 28, 2026", nullptr));
+        calBtnPrev->setText(QCoreApplication::translate("MainWindow", "\342\206\220", nullptr));
+        calBtnNext->setText(QCoreApplication::translate("MainWindow", "\342\206\222", nullptr));
+        addScheduleBtn->setText(QCoreApplication::translate("MainWindow", "+ Add Schedule", nullptr));
+        fabButton->setText(QCoreApplication::translate("MainWindow", "+", nullptr));
     } // retranslateUi
 
 };

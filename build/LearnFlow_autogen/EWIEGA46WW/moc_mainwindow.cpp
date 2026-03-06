@@ -42,7 +42,16 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         "on_navHome_clicked",
         "",
         "on_navTasks_clicked",
-        "on_navCalendar_clicked"
+        "on_navCalendar_clicked",
+        "on_filterAll_clicked",
+        "on_filterOverdue_clicked",
+        "on_filterHighPriority_clicked",
+        "on_calBtnNext_clicked",
+        "on_calBtnPrev_clicked",
+        "on_fabButton_clicked",
+        "on_addScheduleBtn_clicked",
+        "onSearchTextChanged",
+        "text"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -52,6 +61,24 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_navCalendar_clicked'
         QtMocHelpers::SlotData<void()>(4, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_filterAll_clicked'
+        QtMocHelpers::SlotData<void()>(5, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_filterOverdue_clicked'
+        QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_filterHighPriority_clicked'
+        QtMocHelpers::SlotData<void()>(7, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_calBtnNext_clicked'
+        QtMocHelpers::SlotData<void()>(8, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_calBtnPrev_clicked'
+        QtMocHelpers::SlotData<void()>(9, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_fabButton_clicked'
+        QtMocHelpers::SlotData<void()>(10, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_addScheduleBtn_clicked'
+        QtMocHelpers::SlotData<void()>(11, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onSearchTextChanged'
+        QtMocHelpers::SlotData<void(const QString &)>(12, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::QString, 13 },
+        }}),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -78,10 +105,17 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 0: _t->on_navHome_clicked(); break;
         case 1: _t->on_navTasks_clicked(); break;
         case 2: _t->on_navCalendar_clicked(); break;
+        case 3: _t->on_filterAll_clicked(); break;
+        case 4: _t->on_filterOverdue_clicked(); break;
+        case 5: _t->on_filterHighPriority_clicked(); break;
+        case 6: _t->on_calBtnNext_clicked(); break;
+        case 7: _t->on_calBtnPrev_clicked(); break;
+        case 8: _t->on_fabButton_clicked(); break;
+        case 9: _t->on_addScheduleBtn_clicked(); break;
+        case 10: _t->onSearchTextChanged((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
         default: ;
         }
     }
-    (void)_a;
 }
 
 const QMetaObject *MainWindow::metaObject() const
@@ -103,14 +137,14 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 3)
+        if (_id < 11)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 11;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 3)
+        if (_id < 11)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 3;
+        _id -= 11;
     }
     return _id;
 }

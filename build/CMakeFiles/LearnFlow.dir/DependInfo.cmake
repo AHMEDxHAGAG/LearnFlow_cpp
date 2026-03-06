@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "" "LearnFlow_autogen/timestamp" "custom" "LearnFlow_autogen/deps"
   "/mnt/data/QT/LearnFlow/build/LearnFlow_autogen/EWIEGA46WW/qrc_resources.cpp" "CMakeFiles/LearnFlow.dir/LearnFlow_autogen/EWIEGA46WW/qrc_resources.cpp.o" "gcc" "CMakeFiles/LearnFlow.dir/LearnFlow_autogen/EWIEGA46WW/qrc_resources.cpp.o.d"
   "/mnt/data/QT/LearnFlow/build/LearnFlow_autogen/mocs_compilation.cpp" "CMakeFiles/LearnFlow.dir/LearnFlow_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/LearnFlow.dir/LearnFlow_autogen/mocs_compilation.cpp.o.d"
+  "/mnt/data/QT/LearnFlow/addtaskdialog.cpp" "CMakeFiles/LearnFlow.dir/addtaskdialog.cpp.o" "gcc" "CMakeFiles/LearnFlow.dir/addtaskdialog.cpp.o.d"
   "/mnt/data/QT/LearnFlow/main.cpp" "CMakeFiles/LearnFlow.dir/main.cpp.o" "gcc" "CMakeFiles/LearnFlow.dir/main.cpp.o.d"
   "/mnt/data/QT/LearnFlow/mainwindow.cpp" "CMakeFiles/LearnFlow.dir/mainwindow.cpp.o" "gcc" "CMakeFiles/LearnFlow.dir/mainwindow.cpp.o.d"
   "" "LearnFlow" "gcc" "CMakeFiles/LearnFlow.dir/link.d"

@@ -1,10 +1,9 @@
 CMakeFiles/LearnFlow.dir/LearnFlow_autogen/mocs_compilation.cpp.o: \
  /mnt/data/QT/LearnFlow/build/LearnFlow_autogen/mocs_compilation.cpp \
  /usr/include/stdc-predef.h \
- /mnt/data/QT/LearnFlow/build/LearnFlow_autogen/EWIEGA46WW/moc_mainwindow.cpp \
- /mnt/data/QT/LearnFlow/build/LearnFlow_autogen/EWIEGA46WW/../../../mainwindow.h \
- /usr/include/qt6/QtWidgets/QMainWindow \
- /usr/include/qt6/QtWidgets/qmainwindow.h \
+ /mnt/data/QT/LearnFlow/build/LearnFlow_autogen/EWIEGA46WW/moc_addtaskdialog.cpp \
+ /mnt/data/QT/LearnFlow/build/LearnFlow_autogen/EWIEGA46WW/../../../addtaskdialog.h \
+ /usr/include/qt6/QtWidgets/QWidget /usr/include/qt6/QtWidgets/qwidget.h \
  /usr/include/qt6/QtWidgets/qtwidgetsglobal.h \
  /usr/include/qt6/QtGui/qtguiglobal.h /usr/include/qt6/QtCore/qglobal.h \
  /usr/include/c++/15.2.1/type_traits \
@@ -152,7 +151,6 @@ CMakeFiles/LearnFlow.dir/LearnFlow_autogen/mocs_compilation.cpp.o: \
  /usr/include/qt6/QtGui/qtguiexports.h \
  /usr/include/qt6/QtWidgets/qtwidgets-config.h \
  /usr/include/qt6/QtWidgets/qtwidgetsexports.h \
- /usr/include/qt6/QtWidgets/qwidget.h \
  /usr/include/qt6/QtGui/qwindowdefs.h \
  /usr/include/qt6/QtCore/qobjectdefs.h \
  /usr/include/qt6/QtCore/qnamespace.h /usr/include/qt6/QtCore/qcompare.h \
@@ -346,7 +344,14 @@ CMakeFiles/LearnFlow.dir/LearnFlow_autogen/mocs_compilation.cpp.o: \
  /usr/include/qt6/QtGui/qfontvariableaxis.h \
  /usr/include/qt6/QtWidgets/qsizepolicy.h \
  /usr/include/qt6/QtGui/qcursor.h /usr/include/qt6/QtGui/qbitmap.h \
- /usr/include/qt6/QtWidgets/qtabwidget.h \
+ /usr/include/qt6/QtCore/QDate /usr/include/qt6/QtCore/qdatetime.h \
+ /usr/include/qt6/QtCore/qcalendar.h /usr/include/qt6/QtCore/qlocale.h \
  /usr/include/qt6/QtCore/qtmochelpers.h \
  /usr/include/qt6/QtCore/qtmocconstants.h \
- /usr/include/qt6/QtCore/q20algorithm.h
+ /usr/include/qt6/QtCore/q20algorithm.h \
+ /mnt/data/QT/LearnFlow/build/LearnFlow_autogen/EWIEGA46WW/moc_mainwindow.cpp \
+ /mnt/data/QT/LearnFlow/build/LearnFlow_autogen/EWIEGA46WW/../../../mainwindow.h \
+ /usr/include/qt6/QtWidgets/QMainWindow \
+ /usr/include/qt6/QtWidgets/qmainwindow.h \
+ /usr/include/qt6/QtWidgets/qwidget.h \
+ /usr/include/qt6/QtWidgets/qtabwidget.h

@@ -248,6 +248,30 @@ LearnFlow_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/LearnFlow.dir/build.make CMakeFiles/LearnFlow.dir/LearnFlow_autogen/mocs_compilation.cpp.s
 .PHONY : LearnFlow_autogen/mocs_compilation.cpp.s
 
+addtaskdialog.o: addtaskdialog.cpp.o
+.PHONY : addtaskdialog.o
+
+# target to build an object file
+addtaskdialog.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LearnFlow.dir/build.make CMakeFiles/LearnFlow.dir/addtaskdialog.cpp.o
+.PHONY : addtaskdialog.cpp.o
+
+addtaskdialog.i: addtaskdialog.cpp.i
+.PHONY : addtaskdialog.i
+
+# target to preprocess a source file
+addtaskdialog.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LearnFlow.dir/build.make CMakeFiles/LearnFlow.dir/addtaskdialog.cpp.i
+.PHONY : addtaskdialog.cpp.i
+
+addtaskdialog.s: addtaskdialog.cpp.s
+.PHONY : addtaskdialog.s
+
+# target to generate assembly for a file
+addtaskdialog.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LearnFlow.dir/build.make CMakeFiles/LearnFlow.dir/addtaskdialog.cpp.s
+.PHONY : addtaskdialog.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -317,6 +341,9 @@ help:
 	@echo "... LearnFlow_autogen/mocs_compilation.o"
 	@echo "... LearnFlow_autogen/mocs_compilation.i"
 	@echo "... LearnFlow_autogen/mocs_compilation.s"
+	@echo "... addtaskdialog.o"
+	@echo "... addtaskdialog.i"
+	@echo "... addtaskdialog.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
