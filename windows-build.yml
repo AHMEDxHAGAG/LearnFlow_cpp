@@ -1,0 +1,42 @@
+name: Windows Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: "6.8.3"
+          arch: "win64_msvc2022_64"
+          cache: true
+
+      - name: Setup MSVC Environment
+        uses: ilammy/msvc-dev-cmd@v1
+
+      - name: Configure CMake
+        run: |
+          cmake -S LearnFlow -B build -G "Ninja" -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="${{ env.QT_ROOT_DIR }}"
+      - name: Build project
+        run: cmake --build build --config Release
+
+      - name: Prepare deployment
+        run: |
+          New-Item -ItemType Directory -Force -Path deploy
+          Copy-Item build/LearnFlow.exe deploy/
+          & "${{ env.QT_ROOT_DIR }}/bin/windeployqt.exe" --release --no-translations --no-opengl-sw deploy/LearnFlow.exe
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: LearnFlow-Windows
+          path: deploy/
